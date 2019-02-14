@@ -12,7 +12,9 @@ $(document).ready(function(){
 	    let $price = $(this).text().trim().substring(1);
 	    let $product = $(this).closest(".block2");
 	    if($price < $lower || $price > $upper){
-		$product.toggle();
+		if(!$product.is(":hidden")){
+		    $product.toggle();
+		}
 	    }
 	    else{
 		if($product.is(":hidden")){
