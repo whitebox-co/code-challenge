@@ -1,6 +1,11 @@
-
 $(document).ready(function(){
-    $('#filter').click(function(){
+    $filter = null;
+    $("button").each(function(index){
+	if($(this).text().trim() === "Filter"){
+	    $filter = $(this);
+	}
+    });
+    $filter.click(function(){
 	let $lower = Number($('#value-lower').text());
 	let $upper = Number($('#value-upper').text());
 	$(".p-r-5").each(function(index){
@@ -17,3 +22,5 @@ $(document).ready(function(){
 	});
     });
 });
+
+
