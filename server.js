@@ -1,3 +1,4 @@
+//imports and definitions
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -7,7 +8,18 @@ const jsonUrl = "https://next.json-generator.com/api/json/get/EkzBIUWNL";
 
 
 
+// static - frontend serving
 app.use(express.static('public'))
+app.use('/product',express.static('public/product.html'));
+app.use('/detail',express.static('public/product-detail.html'));
+app.get('/',function(req,res){
+    res.redirect('/product');
+});
+
+
+/**
+	restful api endpoint
+*/
 
 // get many endpoint
 app.get('/getMany',(req,res)=>{
