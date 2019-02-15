@@ -1,0 +1,24 @@
+{
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "description": "whitebox challenge",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lirikf/code-challenge.git"
+  },
+  "author": "dmost",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lirikf/code-challenge/issues"
+  },
+  "homepage": "https://github.com/lirikf/code-challenge#readme"
+}
