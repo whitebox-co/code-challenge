@@ -13,6 +13,38 @@ $(document).ready(function(){
 	return $order;
     }
 
+    let filterProducts = function(low,high,products){
+	let filtered = [];
+	console.log(products);
+	for(let i = 0; i < products.length; i++){
+	    let current = Number(products[i].find('.block2-price').text().trim().substring(1));
+	    console.log(current);
+	    if(current >= low && current <= high){
+		filtered.push(products[i]);
+	    }
+	}
+	return filtered;
+    }
+
+    let showProducts = function(selected){
+	on = $defaultOrder.filter(function(ele){
+	    return selected.indexOf(ele) > -1;
+	});
+	off = $defaultOrder.filter(function(ele){
+	    return selected.indexOf(ele) <= -1;
+	});
+	for(let i = 0; i < on.length; i++){
+	    if(on[i].is(":hidden")){
+		on[i].toggle();
+	    }
+	}
+	for(let i = 0; i < off.length; i++){
+	    if(!off[i].is(":hidden")){
+		off[i].toggle();
+	    }
+	}
+    }
+
     $defaultOrder = latestProducts(); // default order of products
 	
     $("button").each(function(index){
@@ -32,6 +64,7 @@ $(document).ready(function(){
     $filter.click(function(){
 	let $lower = Number($('#value-lower').text());
 	let $upper = Number($('#value-upper').text());
+	let $filtered = [];
 	$(".p-r-5").each(function(index){
 	    let $price = $(this).text().trim().substring(1);
 	    let $product = $(this).closest(".p-b-50");
@@ -68,6 +101,34 @@ $(document).ready(function(){
 	}
 	if(this.value === "Default Sorting"){
 	    $(".block2").closest('.row').html($defaultOrder);
+	}
+
+	$def = $defaultOrder;
+	switch(this.value){
+	    case "$0.00 - $50.00":
+	    	$filtered = filterProducts(0,50,$def);
+		showProducts($filtered)
+	    	break;
+	    case "$50.00 - $100.00":
+	    	$filtered = filterProducts(50,100,$def);
+		showProducts($filtered)
+	    	break;
+	    case "$100.00 - $150.00":
+	    	$filtered = filterProducts(100,150,$def);
+		showProducts($filtered)
+	    	break;
+	    case "$150.00 - $200.00":
+	    	$filtered = filterProducts(150,200,$def);
+		showProducts($filtered)
+	    	break;
+	    case "$200.00+":
+	    	$filtered = filterProducts(200,Number.MAX_SAFE_INTEGER,$def);
+		showProducts($filtered)
+	    	break;
+	    case "Price":
+	    	showProducts($defaultOrder)
+	    default:
+	    	break;
 	}
     });
 
