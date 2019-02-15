@@ -50,7 +50,7 @@ $(document).ready(function(){
     // reroutes user to detailed product page on click of product
     $('.block2-overlay').each(function(index){
 	$(this).click(function(){
-	    window.location.href="http://localhost:3000/detail";
+	    window.location.href=window.location.origin+"/detail";
 	});
     });
 
