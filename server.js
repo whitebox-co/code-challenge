@@ -15,6 +15,13 @@ app.use('/detail',express.static('public/product-detail.html'));
 app.get('/',function(req,res){
     res.redirect('/product');
 });
+app.get('/index',function(req,res){
+    res.redirect('/product');
+});
+app.get('/index.html',function(req,res){
+    res.redirect('/product');
+});
+
 
 
 /**
