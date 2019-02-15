@@ -4,7 +4,8 @@
   "description": "whitebox challenge",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   },
   "devDependencies": {},
   "scripts": {
