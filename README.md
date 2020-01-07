@@ -12,7 +12,7 @@ https://next.json-generator.com/api/json/get/EkzBIUWNL
 
 1) Create a NodeJS server that has 2 endpoints. GetMany should return the entire list of fake products. GetSingle should accept an ID, and return just that 1 product.
 
-2) Create a SPA which wires up the static HTML given in the repo (You can
+2) Create an SPA which wires up the static HTML given in the repo (You can
 use (or not) any framework you're comfortable with).  
 
 3) "Wire up" includes any search, sort or filters you see on the page.
