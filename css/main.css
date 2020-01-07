@@ -1490,6 +1490,11 @@ li.sale-noti > a {
 /*[ Slick2 ]
 -----------------------------------------------------------
 */
+
+.slick2 {
+	display: flex;
+}
+
 .wrap-slick2 {
   position: relative;
   margin-right: -15px;
@@ -1984,7 +1989,9 @@ li.sale-noti > a {
 }
 
 .slick3 {
-  width: 80.64%;
+	width: 80.64%;
+	display: flex;
+	margin-left: 40px;
 }
 
 .slick3-dots li {
@@ -1995,7 +2002,7 @@ li.sale-noti > a {
 }
 
 .slick3-dots li img {
-  width: 100%;
+	width: 100%;
 }
 
 .slick3-dot-overlay {
@@ -2018,6 +2025,10 @@ li.sale-noti > a {
 
 .slick3-dots .slick-active .slick3-dot-overlay {
   border: 3px solid #888888;
+}
+
+.item-slick3.main img {
+	height: 300px;
 }
 
 
