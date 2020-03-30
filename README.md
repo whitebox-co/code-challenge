@@ -26,6 +26,6 @@ https://next.json-generator.com/api/json/get/EkzBIUWNL
 
 ### Tips
 - You should not need to modify the CSS.
-- For experienced developers we have seen this challenge take less than an hour. For new developers we have seen this challenge take up to four hours.
+- For experienced developers we have seen this challenge take about 2 hours. For new developers we have seen this challenge take up to four hours.
 - Let me know if you have any questions or things you want clarified.
 - We are looking for your ability to use Javascript, your code style and structure, and your ability to follow the technical requirements listed in this readme.
