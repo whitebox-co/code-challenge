@@ -3,7 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const compression = require('compression');
 const { urlencoded, json } = require('body-parser');
-// const {} = require('./controllers/data.controller')
+const { getMany, getSingle } = require('./controllers/data.controller');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -12,18 +12,10 @@ app.use(cors());
 app.use(compression());
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  console.log(req.url);
-  next();
-});
 app.use('*/public', express.static(path.join(__dirname, '../public')));
 
-app.use('/deets', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, './../product-detail.html'));
-});
-app.use('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, './../product.html'));
-});
+app.get('/GetMany', getMany);
+app.get('/GetSingle/:guid', getSingle);
 
 // ### Global Error Handler ###
 const defaultError = {
